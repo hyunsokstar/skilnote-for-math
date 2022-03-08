@@ -30,8 +30,16 @@ urlpatterns = [
          views.search_skilnote_by_file_name_for_me.as_view(), name="search_skilnote_by_file_name_for_me"),
     path('myshortcut/search_skilnote_by_file_name_for_all/',
          views.search_skilnote_by_file_name_for_all.as_view(), name="search_skilnote_by_file_name_for_all"),
+    
+    path('myshortcut/copy_chapter_to_x/',
+         views.copy_chapter_to_x, name='copy_chapter_to_x'),     
+    
     path('myshortcut/copy_to_me_from_user_id/',
          views.copy_to_me_from_user_id, name='copy_to_me_from_user_id'),
+   
+    
+    
+    
     path('myshortcut/', views.SkilNoteListView.as_view(), name="my_shortcut_list"),
     path('myshortcut2/', views.MyShortCutListView2.as_view(),
          name="my_shortcut_list2"),
@@ -196,7 +204,7 @@ urlpatterns = [
          views.update_category_by_ajax, name='update_category_by_ajax'),
 
     # 비로그인 유저 리스트에 입력폼 추가 하기
-    # D:\new-skilnote\skilnote-for-react\wm\urls.py
+    # D:\new-skilnote\skilnote-for-jpa\wm\urls.py
     path('myshortcut/<str:user>/<int:category_id>',
          views.MyShortcutListByUser.as_view(), name="skil_note_list_by_user"),
 
